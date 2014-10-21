@@ -39,7 +39,7 @@ class CatsController < ApplicationController
   end
 
   def cats_params
-    params.require(:cat).permit(:name, :birthday)
+    params.require(:cat).permit(:name, :birthday, :email, :password)
   end
 
   # Do you think this is a good place to put this logic?

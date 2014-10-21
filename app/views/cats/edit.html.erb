@@ -17,6 +17,14 @@
     <%= c.label :birthday, "Birthday" %>
     <%= c.date_field :birthday, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= c.label :email, "Email" %>
+    <%= c.text_field :email, class: "form-control" %>
+  </div>
+  <div>
+    <%= c.label :password, "Password" %>
+    <%= c.text_field :password, class: "form-control" %>
+  </div>
 
   <%= c.submit "Edit cat info!", class: "btn btn-default" %>
 <% end %>
