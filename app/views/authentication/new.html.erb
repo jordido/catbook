@@ -1,0 +1,12 @@
+
+<%= form_for :cat, url: login_path do |s| %>
+  <div class="form-group">
+    <%= s.label :email, "Email" %>
+    <%= s.text_field :email, class: "form-control" %>
+  </div>
+  <div>
+    <%= s.label :password, "Password" %>
+    <%= s.password_field :password, class: "form-control" %>
+  </div>
+  <%= s.submit "Login", class: "btn btn-default" %>
+<% end %>

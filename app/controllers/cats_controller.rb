@@ -1,7 +1,7 @@
 class CatsController < ApplicationController
 
   before_action :load_cat_of_the_month, only: :index
-  before_action :load_cat, except: :index
+  before_action :load_cat, except: [:index, :new, :create]
 
   def index
     page  = params[:page].to_i || 1
@@ -12,6 +12,20 @@ class CatsController < ApplicationController
   end
 
   def show
+  end
+
+  def new
+    @cat = Cat.new
+  end
+
+  def create
+    @cat = Cat.new(cats_params)
+    if @cat.save
+      redirect_to cats_url
+    else
+      ## display the "new.html.erb" template with the @customer variable
+      render :new
+    end
   end
 
   def edit
@@ -39,7 +53,7 @@ class CatsController < ApplicationController
   end
 
   def cats_params
-    params.require(:cat).permit(:name, :birthday, :email, :password)
+    params.require(:cat).permit(:name, :birthday, :email, :password, :password_confirmation)
   end
 
   # Do you think this is a good place to put this logic?

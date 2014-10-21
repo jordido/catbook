@@ -1,5 +1,3 @@
-<h1>Edit :: <%= @cat.name %></h1>
-
 <% if @cat.errors.any? %>
   <ul>
     <% @cat.errors.full_messages.each do |msg| %>
@@ -23,11 +21,11 @@
   </div>
   <div>
     <%= c.label :password, "Password" %>
-    <%= c.text_field :password, class: "form-control" %>
+    <%= c.password_field :password, class: "form-control" %>
   </div>
   <div>
     <%= c.label :password_confirmation, "Password confirmation" %>
-    <%= c.text_field :password_confirmation, class: "form-control" %>
+    <%= c.password_field :password_confirmation, class: "form-control" %>
   </div>
 
   <%= c.submit "Edit cat info!", class: "btn btn-default" %>
