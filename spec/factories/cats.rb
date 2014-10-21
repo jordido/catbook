@@ -7,5 +7,7 @@ FactoryGirl.define do
     name     { Faker::Name.name } # Why using lamdba here?
     birthday { Faker::Date.birthday }
     visible  true
+    email { Faker::Internet.email }
+    password 'password'
   end
 end

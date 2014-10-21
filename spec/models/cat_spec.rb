@@ -18,7 +18,7 @@ RSpec.describe Cat, type: :model do
       followed2 = create(:follower_relation, cat: cat)
       create(:follower_relation, cat: cat, followed: create(:cat, visible: false))
 
-      expect(cat.followers.all).to eq([followed1.followed, followed2.followed])
+      expect(cat.followers.order("id ASC").all).to eq([followed1.followed, followed2.followed])
     end
   end
 

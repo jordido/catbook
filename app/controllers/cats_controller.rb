@@ -1,4 +1,5 @@
 class CatsController < ApplicationController
+
   before_action :load_cat_of_the_month, only: :index
   before_action :load_cat, except: :index
 
