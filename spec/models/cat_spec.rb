@@ -33,5 +33,22 @@ RSpec.describe Cat, type: :model do
       expect(cat.followed_by.all).to eq([follower1.cat, follower2.cat])
     end
   end
+  describe "Cats authoritation" do
 
+    it "has a valid email" do
+      cat = build(:cat, email:"cat@cats.com")
+      expect(cat.valid?).to be true
+      cat = build(:cat, email:"aedghh")
+      expect(cat.valid?).to be false
+    end
+    it "returns error with empty password" do
+      cat = build(:cat, password:"")
+      expect(cat.valid?).to be false
+    end
+    it "returns valid when no empty password" do
+      cat = build(:cat, password:"12453t3r")
+      expect(cat.valid?).to be true
+    end
+
+  end
 end
