@@ -5,7 +5,8 @@ gem 'rails', '4.1.6'
 
 # Use postgres as the database for Active Record
 gem 'pg'
-
+gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'bcrypt', '~> 3.1.7'
 # Pagination
 gem 'kaminari'
 
