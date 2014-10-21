@@ -49,6 +49,5 @@ RSpec.describe Cat, type: :model do
       cat = build(:cat, password:"12453t3r")
       expect(cat.valid?).to be true
     end
-
   end
 end
