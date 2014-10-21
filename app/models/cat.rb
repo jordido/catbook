@@ -2,6 +2,7 @@ class Cat < ActiveRecord::Base
   has_secure_password
   validates :name, presence: true, length: { in: 2..255 }
   validates :email, uniqueness: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
 
   scope :visible, -> { where(visible: true) }
   scope :hidden,  -> { where(visble: false) }
