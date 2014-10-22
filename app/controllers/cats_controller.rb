@@ -26,7 +26,7 @@ class CatsController < ApplicationController
     @cat = Cat.new(cats_params)
     if @cat.save
 
-      CatMailer.welcome(@cat).deliver
+      CatMailer.delay.welcome(@cat)
 
       redirect_to cats_url
     else
