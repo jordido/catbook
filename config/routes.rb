@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   post 'session/login' => 'authentication#login', as: :login
   get 'session/login' => 'authentication#new', as: :new_login
   get 'session/logout' => 'authentication#new', as: :logout
+  get 'cat_mailer/welcome' =>'cat_mailer#welcome', as: :welcome
 end

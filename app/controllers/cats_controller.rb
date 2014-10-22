@@ -16,6 +16,8 @@ class CatsController < ApplicationController
   def show
   end
 
+
+
   def new
     @cat = Cat.new
   end
@@ -23,6 +25,9 @@ class CatsController < ApplicationController
   def create
     @cat = Cat.new(cats_params)
     if @cat.save
+
+      CatMailer.welcome(@cat).deliver
+
       redirect_to cats_url
     else
       ## display the "new.html.erb" template with the @customer variable

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021085828) do
+ActiveRecord::Schema.define(version: 20141022074200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 20141021085828) do
     t.boolean  "visible",         default: true
     t.string   "email"
     t.string   "password_digest"
+  end
+
+  create_table "cron_examples", force: true do |t|
+    t.datetime "current_time"
   end
 
   create_table "follower_relations", force: true do |t|
