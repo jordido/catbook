@@ -1,5 +1,9 @@
 <h1>Listing cats</h1>
-
+<% if current_user %>
+  <div >
+    Welcome, <%= current_user.name %>! Log out <%= link_to "here", logout_path %>
+  </div>   
+<%end%>  
 <% if @cat_of_the_month %>
   <h2>Cat with more followers last month</h2>
   <p>

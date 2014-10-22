@@ -7,7 +7,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= link_to "Login", new_login_path %>
+    <% if !current_user %>
+      <%= link_to "Login", new_login_path %>
+    <% end %>
     <div class="container">
       <% flash.map do |key, msg| %>
         <%= content_tag :div, msg, id: key %>

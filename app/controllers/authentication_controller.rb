@@ -4,12 +4,13 @@ class AuthenticationController < ApplicationController
 
   def login
 	  # Check if cat with email exists
-	  cat = Cat.find_by_email(authentication_params[:email])
+	  # cat = Cat.find_by_email(authentication_params[:email])
+	  cat = Cat.where(email: authentication_params[:email]).first
 	  if cat && cat.authenticate(authentication_params[:password])
 	    # Password is correct
 	    # Set the session to current user
 	    # Will use cookie
-	    session[authentication_params[:cat]] = authentication_params[:cat]
+	    session[:cat_id] = cat.id
 
 	    redirect_to root_url
 	  else

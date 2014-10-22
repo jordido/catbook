@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :cats, only: [:index, :show, :edit, :update, :new, :create]
 
   post 'session/login' => 'authentication#login', as: :login
-  post 'session/logout' => 'authentication#destroy', as: :logout
   get 'session/login' => 'authentication#new', as: :new_login
+  get 'session/logout' => 'authentication#new', as: :logout
 end
