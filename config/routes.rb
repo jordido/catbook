@@ -10,4 +10,11 @@ Rails.application.routes.draw do
   get 'session/login' => 'authentication#new', as: :new_login
   get 'session/logout' => 'authentication#new', as: :logout
   get 'cat_mailer/welcome' =>'cat_mailer#welcome', as: :welcome
+
+  namespace :api do
+  	namespace :v1 do
+  		resources :cats, only: [:index, :show]
+  	end
+  end
+
 end
